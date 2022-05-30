@@ -25,6 +25,7 @@ Or install it yourself as:
 - [Authentication](#authentication)
 - [Account Info](#account-info)
 - [Documents](#documents)
+- [Webhooks](#webhooks)
 
 ### Authentication
 

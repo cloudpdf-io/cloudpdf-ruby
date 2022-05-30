@@ -49,7 +49,7 @@ cloudpdf.account
 
 Before you can upload a PDF to CloudPDF you must create a new document.
 
-The server will return a pre-signed upload URL where you can upload your PDF file.
+The server will return a pre-signed Amazon upload URL where you can [upload your PDF file](#upload-file) using a PUT request.
 
 After uploading the file you must [notify our server](#upload-file-completed) that the upload is finished and we will process the PDF by our PDF engine.
 
@@ -109,6 +109,27 @@ cloudpdf.update_document("DOCUMENT ID", {
 
 ```ruby
 cloudpdf.delete_document("DOCUMENT ID")
+```
+
+#### Upload file
+
+After you [create a document](#create-a-document) you will receive an Amazon signed URL where you can upload your PDF file using a PUT request. We suggest to upload the file directly from the clients browser to spare your server load. Below you find an example using axios in typescript.
+
+When the file upload is finished you must [notify our server](#upload-file-completed).
+
+```typescript
+import axios from 'axios';
+
+axios.put(signedUploadURL, file, {
+  headers: {
+    "Content-Type": "application/pdf"
+  },
+  onUploadProgress: (e) => {
+    //  Show progress
+    const percentComplete = Math.round((e.loaded * 100) / e.total);
+    console.log(percentComplete);
+  },
+});
 ```
 
 #### Upload file completed

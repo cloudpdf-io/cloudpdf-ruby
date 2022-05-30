@@ -61,6 +61,10 @@ module CloudPDF
       )
     end
 
+    def get_document_file(documentId, fileId)
+      get_response("APIV2GetDocumentFile", "/documents/" + documentId + "/files/" + fileId, {id: documentId, fileId: fileId})
+    end
+
     def get_viewer_token(params, expires_in = 60*60)
       get_signed_token("APIGetDocument", params, expires_in)
     end

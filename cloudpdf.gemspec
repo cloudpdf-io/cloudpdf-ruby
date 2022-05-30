@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = "cloudpdf"
-  spec.version       = "1.0.0"
+  spec.version       = "1.0.1"
   spec.authors       = ["Bob Singor"]
   spec.email         = ["hello@cloudpdf.io"]
 
@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
   # spec.metadata["changelog_uri"] = ""
 
   spec.add_dependency "httparty"
-  spec.add_dependency "jwt", '~> 2.0.0'
+  spec.add_dependency "jwt"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.

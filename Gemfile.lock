@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    cloudpdf (0.0.0)
+    cloudpdf (1.0.0)
       httparty
       jwt
 

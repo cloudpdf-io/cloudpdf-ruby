@@ -114,10 +114,16 @@ cloudpdf.delete_document("DOCUMENT ID")
 
 After uploading your file to Amazon S3 you must notify our server on this endpoint that the upload is complete. On a successful request the status of the document will change from "WaitingUpload" to "Processing".
 
-You can poll the GET endpoint for status updates or use a webhook to find out if your document has completed processing by our PDF engine.
+You can poll the [GET endpoint](#get-a-file) for status updates or use a webhook to find out if your document has completed processing by our PDF engine.
 
 ```ruby
 cloudpdf.upload_document_file_complete("DOCUMENT ID", "FILE ID")
+```
+
+#### Get a file
+
+```ruby
+cloudpdf.get_document_file("DOCUMENT ID", "FILE ID")
 ```
 
 ## Contributing

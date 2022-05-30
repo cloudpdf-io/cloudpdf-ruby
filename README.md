@@ -126,6 +126,31 @@ cloudpdf.upload_document_file_complete("DOCUMENT ID", "FILE ID")
 cloudpdf.get_document_file("DOCUMENT ID", "FILE ID")
 ```
 
+### Webhooks
+
+Webhooks are used to notify your system of specific CloudPDF events.
+
+#### Create a Webhook
+
+```ruby
+cloudpdf.create_webhook({
+  "name": "Webhook 1",
+  "url": "https://urltotrigger.com/",
+  "events": ["document.created"],
+  "headers": {
+    "Authorization": "Bearer secret"
+  }
+})
+```
+
+##### Options
+
+- `name`: The name of your webhook for your own reference (`string`)
+- `url`: The URL that the webhook should trigger on a event (`string`)
+- `secret`: Optional secret that you can use to secure the webhook endpoint (`string`)
+- `events`: An array of events. Possible values are: document.created, document.updated, collection.created, collection.updated, tracker.new, lead.new, file.processed (`array`)
+- `headers`: Object of header keys and values that will be sent as request header on the webhook request (`object`)
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/cloudpdf-io/cloudpdf-ruby.

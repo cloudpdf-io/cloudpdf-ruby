@@ -68,11 +68,11 @@ cloudpdf.create_document({
 
 ##### Options
 
-- `name`: the name of the PDF you want to upload (`string`)
-- `description`: description of the PDF you want to upload (`string`)
-- `parentId`: the ID of the folder you want to create the document in (`string`)
-- `tags`: set tags on the document to easily filter and search documents later (`array`)
-- `defaultPermissions`: Set the default permissions for this document. If none are given we use the default permissions of the organization. You can change the default permissions of the organization in the Dashboard → Settings → Upload Settings. (`object`)
+- `name`: The name of the PDF you want to upload (`string`)
+- `description`: Description of the PDF you want to upload (`string`)
+- `parentId`: The ID of the folder you want to create the document in (`string`)
+- `tags`: Set tags on the document to easily filter and search documents later (`array`)
+- `defaultPermissions`: Set the default permissions for this document. You can find all parameters in te [API docs](https://cloudpdf.io/developers/api-docs#create-document). If none are given we use the default permissions of the organization. You can change the default permissions of the organization in the Dashboard → Settings → Upload Settings. (`object`)
 
 #### Get a Document
 

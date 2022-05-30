@@ -151,6 +151,45 @@ cloudpdf.create_webhook({
 - `events`: An array of events. Possible values are: document.created, document.updated, collection.created, collection.updated, tracker.new, lead.new, file.processed (`array`)
 - `headers`: Object of header keys and values that will be sent as request header on the webhook request (`object`)
 
+#### Get a Webhook
+
+```ruby
+cloudpdf.get_webhook("WEBHOOK ID")
+```
+
+#### Update a Webhook
+
+```ruby
+cloudpdf.update_webhook("WEBHOOK ID", {
+  "name": "Webhook 1",
+  "url": "https://urltotrigger.com/",
+  "events": ["document.created"],
+  "headers": {
+    "Authorization": "Bearer secret"
+  }
+})
+```
+
+##### Options
+
+- `name`: The name of your webhook for your own reference (`string`)
+- `url`: The URL that the webhook should trigger on a event (`string`)
+- `secret`: Optional secret that you can use to secure the webhook endpoint (`string`)
+- `events`: An array of events. Possible values are: document.created, document.updated, collection.created, collection.updated, tracker.new, lead.new, file.processed (`array`)
+- `headers`: Object of header keys and values that will be sent as request header on the webhook request (`object`)
+
+#### Delete a Webhook
+
+```ruby
+cloudpdf.delete_webhook("WEBHOOK ID")
+```
+
+#### List all Webhooks
+
+```ruby
+cloudpdf.get_webhooks()
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/cloudpdf-io/cloudpdf-ruby.

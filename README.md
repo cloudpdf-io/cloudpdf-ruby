@@ -56,9 +56,12 @@ After uploading the file you must notify our server that the upload is finished 
 cloudpdf.create_document({
   "name": "your_document_name.pdf",
   "description": "Description of your document",
+  "tags": ["tag1", "tag2"],
   "defaultPermissions": {
     "download": "Allowed",
-    "search": true
+    "search": true,
+    "selection" false,
+    "info": ["email", "phone"]
   }
 })
 ```
